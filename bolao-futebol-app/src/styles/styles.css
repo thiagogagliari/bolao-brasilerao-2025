@@ -63,6 +63,8 @@ input{
 }
 
 form button {
+    height: 50px;
+    font-size: 50px;
     background-color: #0fbc54;
     color: #1e18bc;
     border: none;
@@ -71,8 +73,13 @@ form button {
 }
 
 form button:hover {
+    font-size: 20px;
     background-color: #2216aa;
-    color: #0fca2b;
+    color: #19d15f;
+}
+
+.palpite-form{
+    font-size: 20px;
 }
 
 .jogo {

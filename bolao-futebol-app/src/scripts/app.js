@@ -2,7 +2,7 @@ import { salvarPalpite, recuperarPalpites, recuperarResultados, salvarPontos, re
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
 const supabaseUrl = 'https://rkdwkfiydsicrrxthvfp.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrZHdrZml5ZHNpY3JyeHRodmZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0OTAzNTQsImV4cCI6MjA1ODA2NjM1NH0.y6uiqTfzKSA7WJZkCuykObYQtbdfHiRhDI-xkQdYbDk';
+const supabaseKey = 'eyhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrZHdrZml5ZHNpY3JyeHRodmZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0OTAzNTQsImV4cCI6MjA1ODA2NjM1NH0.y6uiqTfzKSA7WJZkCuykObYQtbdfHiRhDI-xkQdYbDk';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -14,36 +14,39 @@ document.addEventListener('DOMContentLoaded', async () => {
     const userInfo = document.getElementById('user-info');
     const btnRanking = document.getElementById('btn-ranking');
     const rankingList = document.getElementById('ranking-list');
-    const btnLogout = document.createElement('button');
-    btnLogout.textContent = 'Logout';
-    btnLogout.id = 'btn-logout';
-    document.body.appendChild(btnLogout);
 
-    
+    const { data: { session }, error } = await supabase.auth.getSession();
+    if (error) {
+        console.error('Erro ao buscar a sessão:', error);
+        alert('Erro ao buscar a sessão.');
+        window.location.href = 'login.html';
+        return;
+    }
 
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) {
+    if (!session) {
         alert('Você precisa estar logado para acessar esta página.');
         window.location.href = 'login.html';
         return;
     }
 
+    const user = session.user;
+
     // Buscar o nome do usuário na tabela user_profiles
-    const { data: userProfile, error } = await supabase
+    const { data: userProfile, error: userProfileError } = await supabase
         .from('user_profiles')
         .select('username')
         .eq('user_id', user.id)
         .single();
 
-    if (error) {
-        console.error('Erro ao buscar o perfil do usuário:', error);
-        userInfo.textContent = 'Bem-vindo, Usuário';
+    if (userProfileError) {
+        console.error('Erro ao buscar o perfil do usuário:', userProfileError);
+        userInfo.innerHTML = 'Bem-vindo, Usuário';
     } else {
         console.log('Perfil do usuário:', userProfile);
-        userInfo.textContent = `Bem-vindo, ${userProfile.username}`;
+        userInfo.innerHTML = `Bem-vindo, ${userProfile.username} <button id="logout-button" style="background-color: red; color: white; border: none; padding: 5px 10px; cursor: pointer;">Logout</button>`;
     }
 
-    btnLogout.addEventListener('click', async () => {
+    document.getElementById('logout-button').addEventListener('click', async () => {
         await supabase.auth.signOut();
         window.location.href = 'login.html';
     });
@@ -52,9 +55,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     let rodada = 1;
 
     const jogosRodada1 = [
-        { id: 1, mandante: 'CRU', visitante: 'MIR', escudoMandante: './assets/cruzeiro.png', escudoVisitante: './assets/mirassol.png' },
-        { id: 2, mandante: 'FOR', visitante: 'FLU', escudoMandante: './assets/fortaleza.png', escudoVisitante: './assets/fluminense.png' },
-        { id: 3, mandante: 'GRÊ', visitante: 'CAM', escudoMandante: './assets/gremio.png', escudoVisitante: './assets/atletico-mg.png'},
+        { id: 1, mandante: 'Cruzeiro', visitante: 'Mirassol', escudoMandante: './assets/cruzeiro.png', escudoVisitante: './assets/mirassol.png' },
+        { id: 2, mandante: 'Fortaleza', visitante: 'Fluminense', escudoMandante: './assets/fortaleza.png', escudoVisitante: './assets/fluminense.png' },
+        { id: 3, mandante: 'Grêmio', visitante: 'Atlético-MG', escudoMandante: './assets/gremio.png', escudoVisitante: './assets/atletico-mg.png'},
     ];
 
     const jogosRodada2 = [
@@ -123,9 +126,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             ` : `
                 <img src="${jogo.escudoMandante}" alt="${jogo.mandante}" class="escudo">
                 <span>${jogo.mandante}</span>
-                <input type="number" name="palpite-mandante-${jogo.id}" placeholder="" required>
+                <input type="number" name="palpite-mandante-${jogo.id}" placeholder="Gols Mandante" required>
                 <span>vs</span>
-                <input type="number" name="palpite-visitante-${jogo.id}" placeholder="" required>
+                <input type="number" name="palpite-visitante-${jogo.id}" placeholder="Gols Visitante" required>
                 <span>${jogo.visitante}</span>
                 <img src="${jogo.escudoVisitante}" alt="${jogo.visitante}" class="escudo">
                 <label for="primeiro-gol-${jogo.id}">Primeiro Gol:</label>
