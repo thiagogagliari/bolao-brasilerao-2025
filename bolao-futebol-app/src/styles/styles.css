@@ -223,6 +223,23 @@ ul li {
     border: 1px solid #ddd;
 }
 
+#rodada-select{
+    font-size: 20px;
+    border-radius: 8px;
+    width: 200px;
+    height: 40px;
+    background-color: #1e18bc;
+    color: #fff;
+}
+
+#user-select, option{
+    font-size: 20px;
+    border-radius: 8px;
+    width: 200px;
+    height: 40px;
+    background-color: #1e18bc;
+    color: #fff;
+}
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     main {
