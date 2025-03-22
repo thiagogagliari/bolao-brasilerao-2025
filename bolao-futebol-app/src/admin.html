@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Inserir Resultados</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Inserir Resultados dos Jogos</h1>
+    </header>
+    <main>
+      <form id="resultado-form">
+        <label for="jogo-id">ID do Jogo:</label>
+        <input type="number" id="jogo-id" name="jogo-id" required />
+        <label for="rodada">Rodada:</label>
+        <input type="number" id="rodada" name="rodada" required />
+        <label for="mandante-gols">Gols do Mandante:</label>
+        <input type="number" id="mandante-gols" name="mandante-gols" required />
+        <label for="visitante-gols">Gols do Visitante:</label>
+        <input
+          type="number"
+          id="visitante-gols"
+          name="visitante-gols"
+          required
+        />
+        <label for="primeiro-gol">Primeiro Gol:</label>
+        <select id="primeiro-gol" name="primeiro-gol" required>
+          <option value="mandante">Mandante</option>
+          <option value="nenhum">Nenhum</option>
+          <option value="visitante">Visitante</option>
+        </select>
+        <button type="submit">Inserir Resultado</button>
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2023 Bolão de Futebol entre Amigos</p>
+    </footer>
+    <script type="module" src="scripts/admin.js"></script>
+  </body>
+</html>

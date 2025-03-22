@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Ranking - Bolão de Futebol</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Ranking do Bolão</h1>
+    </header>
+    <main>
+      <section id="ranking">
+        <h2>Ranking dos Participantes</h2>
+        <label for="filtro-ranking">Filtrar por:</label>
+        <select id="filtro-ranking">
+          <option value="geral">Geral</option>
+          <!-- Adicione opções para cada rodada conforme necessário -->
+          <option value="1">Rodada 1</option>
+          <option value="2">Rodada 2</option>
+          <!-- Continue adicionando opções para cada rodada -->
+        </select>
+        <ul id="lista-ranking"></ul>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Bolão Brasileirão 2025</p>
+    </footer>
+    <script type="module" src="scripts/ranking.js"></script>
+  </body>
+</html>

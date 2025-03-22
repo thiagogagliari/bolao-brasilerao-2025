@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Login - Bolão de Futebol</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .login-container {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+      }
+      h1 {
+        margin-bottom: 1rem;
+        color: #1e3c72;
+      }
+      .input-group {
+        margin-bottom: 1rem;
+        text-align: left;
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background: #14c20b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      button:hover {
+        background: #163c69;
+      }
+      footer {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: #fff;
+      }
+
+      .btn-cad {
+        text-decoration: none;
+        color: #2a5298;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Login</h1>
+      <form id="login-form">
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="input-group">
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit">Entrar</button>
+        <p>
+          Não tem cadastro?
+          <a href="cadastro.html" class="btn-cad">Faça aqui</a>
+        </p>
+      </form>
+      <footer>
+        &copy; 2025 Bolão do Brasileirão - Todos os direitos reservados
+      </footer>
+    </div>
+    <script type="module" src="scripts/auth.js"></script>
+  </body>
+</html>

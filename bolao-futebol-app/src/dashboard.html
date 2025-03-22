@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Bolão Brasileirão 2025</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Bolão Brasileirão 2025</h1>
+      <div id="user-info"></div>
+
+      <button id="logout-button">
+        <a href="login.html" class="ancoralogout">Logout</a>
+      </button>
+    </header>
+    <main>
+      <section id="pontos">
+        <h2>Seus Pontos</h2>
+        <div id="pontos-totais-container">
+          <h3>Total de Pontos</h3>
+          <ul id="pontos-totais"></ul>
+        </div>
+        <div id="pontos-rodada-container">
+          <h3>Pontos por Rodada</h3>
+          <ul id="pontos-rodada"></ul>
+        </div>
+      </section>
+      <section id="bolao">
+        <h2>Participe do Bolão</h2>
+        <label for="rodada-select">Selecione a Rodada:</label>
+        <select id="rodada-select">
+          <option value="2">Rodada 2</option>
+          <option value="1">Rodada 1</option>
+
+          <!-- Adicione mais opções conforme necessário -->
+        </select>
+        <div id="jogos-container"></div>
+        <form id="palpite-form">
+          <button type="submit">Enviar Palpite</button>
+        </form>
+      </section>
+      <section id="ranking">
+        <h2>Ranking do Bolão</h2>
+        <button id="btn-ranking">Ver Ranking</button>
+        <ul id="ranking-list"></ul>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Bolão Brasileirão - Todos os direitos Reservados</p>
+    </footer>
+    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="scripts/bolao.js"></script>
+  </body>
+</html>
