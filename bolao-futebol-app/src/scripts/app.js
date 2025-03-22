@@ -170,9 +170,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             ` : `
                 <img src="${jogo.escudoMandante}" alt="${jogo.mandante}" class="escudo">
                 <span>${jogo.mandante}</span>
-                <input type="number" name="palpite-mandante-${jogo.id}" placeholder="Gols Mandante" required>
+                <input type="number" name="palpite-mandante-${jogo.id}" placeholder="" required>
                 <span>vs</span>
-                <input type="number" name="palpite-visitante-${jogo.id}" placeholder="Gols Visitante" required>
+                <input type="number" name="palpite-visitante-${jogo.id}" placeholder="" required>
                 <span>${jogo.visitante}</span>
                 <img src="${jogo.escudoVisitante}" alt="${jogo.visitante}" class="escudo">
                 <label for="primeiro-gol-${jogo.id}">Primeiro Gol:</label>
