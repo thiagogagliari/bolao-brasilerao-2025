@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const userInfo = document.getElementById('user-info');
     const btnRanking = document.getElementById('btn-ranking');
     const rankingList = document.getElementById('ranking-list');
+    const mensagem = document.getElementById('mensagem');
+
+    const prazoFinal = new Date(2025, 2, 29, 18, 30); // 24 de março de 2025 às 18:00 (mês começa em 0)
 
     const { data: { session }, error } = await supabase.auth.getSession();
     if (error) {
@@ -167,6 +170,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
 
+            const agora = new Date();
+            if (agora >= prazoFinal) {
+                mensagem.innerHTML = "<span style='color: red;'>⛔ Palpites encerrados! O prazo acabou.</span>";
+                return;
+            }
+
             const palpitesPromises = jogos.map(async (jogo) => {
                 const palpiteMandante = document.querySelector(`input[name="palpite-mandante-${jogo.id}"]`);
                 const palpiteVisitante = document.querySelector(`input[name="palpite-visitante-${jogo.id}"]`);
@@ -192,7 +201,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
 
             await Promise.all(palpitesPromises);
-            alert('Palpite enviado com sucesso!');
+            mensagem.innerHTML = "<span style='color: green;'>✅ Palpite enviado com sucesso!</span>";
             const novosPalpites = await recuperarPalpites(userId, rodada);
             atualizarListaPalpites(novosPalpites, betsList);
             await calcularESalvarPontos(userId, rodada, novosPalpites, resultados, pontosTotaisContainer, pontosRodadaContainer);
