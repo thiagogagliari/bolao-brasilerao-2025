@@ -17,6 +17,9 @@
     <header>
       <h1>Bolão Brasileirão 2025</h1>
       <div id="user-info"></div>
+      <button id="btn-palpites">
+        <a href="palpites.html">Ver Palpites</a>
+      </button>
     </header>
     <main>
       <section id="pontos">
@@ -31,17 +34,17 @@
         </div>
       </section>
       <section id="bolao">
-        <h2>Participe do Bolão</h2>
+        <h2>Escolha a Rodada e se divirta</h2>
         <label for="rodada-select">Selecione a Rodada:</label>
         <select id="rodada-select">
-          <option value="2">Rodada 2</option>
           <option value="1">Rodada 1</option>
+          <option value="2">Rodada 2</option>
 
           <!-- Adicione mais opções conforme necessário -->
         </select>
         <div id="jogos-container"></div>
         <form id="palpite-form">
-          <button type="submit">Enviar Palpite</button>
+          <button id="submit" type="submit">Enviar Palpite</button>
         </form>
       </section>
       <section id="ranking">

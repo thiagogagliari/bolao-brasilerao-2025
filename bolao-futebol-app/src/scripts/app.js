@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const jogosRodada1 = [
         { id: 1, mandante: 'CRU', visitante: 'MIR', escudoMandante: './assets/cruzeiro.png', escudoVisitante: './assets/mirassol.png' },
         { id: 2, mandante: 'FOR', visitante: 'FLU', escudoMandante: './assets/fortaleza.png', escudoVisitante: './assets/fluminense.png' },
-        { id: 3, mandante: 'GRE', visitante: 'CAM-MG', escudoMandante: './assets/gremio.png', escudoVisitante: './assets/atletico-mg.png'},
+        { id: 3, mandante: 'GRE', visitante: 'CAM', escudoMandante: './assets/gremio.png', escudoVisitante: './assets/atletico-mg.png'},
         { id: 4, mandante: 'JUV', visitante: 'VIT', escudoMandante: './assets/juventude.png', escudoVisitante: './assets/vitoria.png'},
         { id: 5, mandante: 'SÃO', visitante: 'SPO', escudoMandante: './assets/sao-paulo.png', escudoVisitante: './assets/sport.png'},
         { id: 6, mandante: 'FLA', visitante: 'INT', escudoMandante: './assets/flamengo.png', escudoVisitante: './assets/internacional.png'},
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <option value="nenhum">Nenhum</option>
                     <option value="visitante">Visitante</option>
                 </select>
-                <label for="jogo-dobro-${jogo.id}">Jogo em Dobro:</label>
+                <label for="jogo-dobro-${jogo.id}">BOOSTER:</label>
                 <input type="checkbox" name="jogo-dobro-${jogo.id}" class="jogo-dobro-checkbox">
             `;
             jogosContainer.appendChild(jogoDiv);
