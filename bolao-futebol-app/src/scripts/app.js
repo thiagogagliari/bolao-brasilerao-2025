@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         { id: 7, mandante: 'PAL', visitante: 'BOT', escudoMandante: './assets/palmeiras.png', escudoVisitante: './assets/botafogo.png'},
         { id: 8, mandante: 'VAS', visitante: 'SAN', escudoMandante: './assets/vasco.png', escudoVisitante: './assets/santos.png'},
         { id: 9, mandante: 'BAH', visitante: 'COR', escudoMandante: './assets/bahia.png', escudoVisitante: './assets/corinthians.png'},
-        { id: 10, mandante: 'BRA', visitante: 'CEA', escudoMandante: './assets/rb-bragantino.png', escudoVisitante: './assets/ceara.png'},
+        { id: 10, mandante: 'BRA', visitante: 'CEA', escudoMandante: './assets/rb-bragantino.png', escudoVisitante: './assets/ceara.png'}
     ];
 
     const jogosRodada2 = [
@@ -83,43 +83,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     rodadaSelect.addEventListener('change', async (event) => {
         rodada = parseInt(event.target.value);
         await carregarJogosEResultados(rodada);
-    });
-
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        const jogos = jogosPorRodada[rodada];
-        const palpitesPromises = jogos.map(async (jogo) => {
-            const palpiteMandante = document.querySelector(`input[name="palpite-mandante-${jogo.id}"]`);
-            const palpiteVisitante = document.querySelector(`input[name="palpite-visitante-${jogo.id}"]`);
-            const primeiroGol = document.querySelector(`select[name="primeiro-gol-${jogo.id}"]`);
-            const jogoDobro = document.querySelector(`input[name="jogo-dobro-${jogo.id}"]`);
-
-            if (!palpiteMandante.value || !palpiteVisitante.value || !primeiroGol.value) {
-                alert('Por favor, preencha todos os campos obrigatórios.');
-                return;
-            }
-
-            // Verificar se já existe um jogo marcado como "jogo em dobro"
-            const jogoDobroExistente = palpites.find(p => p.jogo_dobro);
-            if (jogoDobro.checked && jogoDobroExistente) {
-                alert('Você só pode marcar um jogo como "jogo em dobro" por rodada.');
-                return;
-            }
-
-            const palpiteExistente = palpites.find(p => p.jogo === jogo.id);
-            if (!palpiteExistente) {
-                await salvarPalpite(userId, rodada, jogo.id, { mandante: +palpiteMandante.value, visitante: +palpiteVisitante.value }, primeiroGol.value, jogoDobro.checked);
-            }
-        });
-
-        await Promise.all(palpitesPromises);
-        alert('Palpite enviado com sucesso!');
-        const novosPalpites = await recuperarPalpites(userId, rodada);
-        atualizarListaPalpites(novosPalpites, betsList);
-        await calcularESalvarPontos(userId, rodada, novosPalpites, resultados, pontosTotaisContainer, pontosRodadaContainer);
-        await atualizarRanking(userId); // Atualizar o ranking após salvar os pontos
-        window.location.reload(); // Recarregar a página para atualizar os palpites e bloquear os campos
     });
 
     await carregarJogosEResultados(rodada);
@@ -181,7 +144,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <option value="nenhum">Nenhum</option>
                     <option value="visitante">Visitante</option>
                 </select>
-                <label for="jogo-dobro-${jogo.id}">BOOSTER:</label>
+                <label for="jogo-dobro-${jogo.id}">BÔNUS:</label>
                 <input type="checkbox" name="jogo-dobro-${jogo.id}" class="jogo-dobro-checkbox">
             `;
             jogosContainer.appendChild(jogoDiv);
@@ -200,6 +163,45 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             });
         });
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const palpitesPromises = jogos.map(async (jogo) => {
+                const palpiteMandante = document.querySelector(`input[name="palpite-mandante-${jogo.id}"]`);
+                const palpiteVisitante = document.querySelector(`input[name="palpite-visitante-${jogo.id}"]`);
+                const primeiroGol = document.querySelector(`select[name="primeiro-gol-${jogo.id}"]`);
+                const jogoDobro = document.querySelector(`input[name="jogo-dobro-${jogo.id}"]`);
+
+                if (!palpiteMandante.value || !palpiteVisitante.value || !primeiroGol.value) {
+                    alert('Por favor, preencha todos os campos obrigatórios.');
+                    return;
+                }
+
+                // Verificar se já existe um jogo marcado como "jogo em dobro"
+                const jogoDobroExistente = palpites.find(p => p.jogo_dobro);
+                if (jogoDobro.checked && jogoDobroExistente) {
+                    alert('Você só pode marcar um jogo como "jogo em dobro" por rodada.');
+                    return;
+                }
+
+                const palpiteExistente = palpites.find(p => p.jogo === jogo.id);
+                if (!palpiteExistente) {
+                    await salvarPalpite(userId, rodada, jogo.id, { mandante: +palpiteMandante.value, visitante: +palpiteVisitante.value }, primeiroGol.value, jogoDobro.checked);
+                }
+            });
+
+            await Promise.all(palpitesPromises);
+            alert('Palpite enviado com sucesso!');
+            const novosPalpites = await recuperarPalpites(userId, rodada);
+            atualizarListaPalpites(novosPalpites, betsList);
+            await calcularESalvarPontos(userId, rodada, novosPalpites, resultados, pontosTotaisContainer, pontosRodadaContainer);
+            await atualizarRanking(userId); // Atualizar o ranking após salvar os pontos
+            window.location.reload(); // Recarregar a página para atualizar os palpites e bloquear os campos
+        });
+
+        await calcularESalvarPontos(userId, rodada, palpites, resultados, pontosTotaisContainer, pontosRodadaContainer);
+        await atualizarRanking(userId); // Atualizar o ranking após calcular e salvar os pontos
     }
 
     async function calcularESalvarPontos(userId, rodada, palpites, resultados, pontosTotaisContainer, pontosRodadaContainer) {

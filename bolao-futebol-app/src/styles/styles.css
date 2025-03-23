@@ -62,10 +62,6 @@ input{
     border: solid 2px #2216aa;
 }
 
-#submit{
-    font-size: 30px;
-}
-
 form button {
     height: 50px;
     font-size: 50px;
@@ -317,9 +313,9 @@ ul li {
         font-size: 10px;
     }
 
-    .jogo .escuio{
-        width: 20px;
-        height: 6px;
+    .jogo .escudo{
+        width: 30px;
+        height: 30px;
     }
     .jogo input{
         width: 30px;
