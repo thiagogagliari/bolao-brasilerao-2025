@@ -133,36 +133,26 @@ async function recuperarPontos(userId) {
     }
 }
 
-async function atualizarRanking(userId) {
-    // Recuperar todos os pontos do usuário
-    const { data: pontos, error } = await supabase
+export async function atualizarRanking(userId) {
+    const { data: pontos, error: pontosError } = await supabase
         .from('pontos')
-        .select('pontos')
+        .select('rodada, pontos')
         .eq('user_id', userId);
 
-    if (error) {
-        console.error('Erro ao recuperar pontos para o ranking:', error);
+    if (pontosError) {
+        console.error('Erro ao buscar os pontos:', pontosError);
         return;
     }
 
-    // Calcular o total de pontos
     const totalPontos = pontos.reduce((acc, ponto) => acc + ponto.pontos, 0);
 
-    // Atualizar ou inserir no ranking
-    const { data, error: rankingError } = await supabase
+    const { error: rankingError } = await supabase
         .from('ranking')
-        .upsert([
-            {
-                user_id: userId,
-                total_pontos: totalPontos
-            }
-        ], { onConflict: ['user_id'] });
+        .upsert({ user_id: userId, total_pontos: totalPontos }, { onConflict: 'user_id' });
 
     if (rankingError) {
         console.error('Erro ao atualizar o ranking:', rankingError);
-    } else {
-        console.log('Ranking atualizado com sucesso:', data);
     }
 }
 
-export { calcularPontos, salvarPalpite, recuperarPalpites, recuperarResultados, salvarPontos, recuperarPontos, atualizarRanking };
+export { calcularPontos, salvarPalpite, recuperarPalpites, recuperarResultados, salvarPontos, recuperarPontos };

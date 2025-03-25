@@ -15,8 +15,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const btnRanking = document.getElementById('btn-ranking');
     const rankingList = document.getElementById('ranking-list');
     const mensagem = document.getElementById('mensagem');
+    const btnEnviar = document.getElementById('btn-enviar'); // Certifique-se de que o ID está correto
 
-    const prazoFinal = new Date(2025, 2, 29, 18, 30); // 24 de março de 2025 às 18:00 (mês começa em 0)
+    const prazoFinal = new Date(2025, 2, 29, 18, 30); // 29 de março de 2025 às 18:30 (mês começa em 0)
 
     const { data: { session }, error } = await supabase.auth.getSession();
     if (error) {
@@ -71,9 +72,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     ];
 
     const jogosRodada2 = [
-        // { id: 4, mandante: 'Palmeiras', visitante: 'São Paulo', escudoMandante: './assets/palmeiras.png', escudoVisitante: './assets/sao-paulo.png' },
-        // { id: 5, mandante: 'Santos', visitante: 'Corinthians', escudoMandante: './assets/santos.png', escudoVisitante: './assets/corinthians.png' },
-        // { id: 6, mandante: 'Internacional', visitante: 'Botafogo', escudoMandante: './assets/internacional.png', escudoVisitante: './assets/botafogo.png'},
+        { id: 11, mandante: 'CAM', visitante: 'SÃO', escudoMandante: './assets/atletico-mg.png', escudoVisitante: './assets/sao-paulo.png' },
+        { id: 12, mandante: 'BOT', visitante: 'JUV', escudoMandante: './assets/botafogo.png', escudoVisitante: './assets/juventude.png' },
+        { id: 13, mandante: 'CEA', visitante: 'GRÊ', escudoMandante: './assets/ceara.png', escudoVisitante: './assets/gremio.png'},
+        { id: 14, mandante: 'COR', visitante: 'VAS', escudoMandante: './assets/corinthians.png', escudoVisitante: './assets/vasco.png'},
+        { id: 15, mandante: 'FLU', visitante: 'BRA', escudoMandante: './assets/fluminense.png', escudoVisitante: './assets/rb-bragantino.png'},
+        { id: 16, mandante: 'INT', visitante: 'CRU', escudoMandante: './assets/internacional.png', escudoVisitante: './assets/cruzeiro.png'},
+        { id: 17, mandante: 'MIR', visitante: 'FOR', escudoMandante: './assets/mirassol.png', escudoVisitante: './assets/fortaleza.png'},
+        { id: 18, mandante: 'SAN', visitante: 'BAH', escudoMandante: './assets/santos.png', escudoVisitante: './assets/bahia.png'},
+        { id: 19, mandante: 'SPO', visitante: 'PAL', escudoMandante: './assets/sport.png', escudoVisitante: './assets/palmeiras.png'},
+        { id: 20, mandante: 'VIT', visitante: 'FLA', escudoMandante: './assets/vitoria.png', escudoVisitante: './assets/flamengo.png'},
     ];
 
     const jogosPorRodada = {
@@ -176,6 +184,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 return;
             }
 
+            // Desabilitar o botão de envio
+            btnEnviar.disabled = true;
+
             const palpitesPromises = jogos.map(async (jogo) => {
                 const palpiteMandante = document.querySelector(`input[name="palpite-mandante-${jogo.id}"]`);
                 const palpiteVisitante = document.querySelector(`input[name="palpite-visitante-${jogo.id}"]`);
@@ -266,7 +277,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     btnRanking.addEventListener('click', async () => {
         const { data: ranking, error } = await supabase
             .from('ranking')
-            .select('username, total_pontos')
+            .select('username, SUM(pontos) as total_pontos')
+            .group('username')
             .order('total_pontos', { ascending: false });
 
         if (error) {

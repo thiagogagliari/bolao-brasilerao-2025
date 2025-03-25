@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await carregarRanking('geral');
 
     async function carregarRanking(filtro) {
-        listaRanking.innerHTML = '';
+        listaRanking.innerHTML = 'Classificação Geral';
 
         let query = supabase
             .from('ranking')
