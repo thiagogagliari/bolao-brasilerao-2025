@@ -155,4 +155,4 @@ export async function atualizarRanking(userId) {
     }
 }
 
-export { calcularPontos, salvarPalpite, recuperarPalpites, recuperarResultados, salvarPontos, recuperarPontos };
+export { calcularPontos, salvarPalpite, recuperarPalpites, recuperarResultados, salvarPontos, recuperarPontos};

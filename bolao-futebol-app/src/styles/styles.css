@@ -104,6 +104,7 @@ form button:hover {
 }
 
 .jogo label{
+    color: #ddd;
     font-size: 15px;
 }
 
@@ -118,7 +119,7 @@ form button:hover {
 }
 
 select, label{
-    color: #1e18bc;
+    color: #1b13bb;
 }
 
 footer {
@@ -250,6 +251,8 @@ ul li {
 }
 
 #palpites-list li {
+    color: #fff;
+    font-size: 15px;
     background-color: #1b13bb;
     margin-bottom: 10px;
     padding: 10px;
@@ -299,6 +302,74 @@ div{
 
 #btn-enviar{
     font-size: 25px;
+}
+
+/* Estilo para a tabela de ranking */
+#ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0px;
+  margin-bottom: 200px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#ranking-table th,
+#ranking-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#ranking-table th {
+  background-color: #1e3c72;
+  color: white;
+  font-weight: bold;
+}
+
+#ranking-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+#ranking-table tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+/* Destaque para os três primeiros colocados */
+#ranking-table tbody tr:first-child td {
+  background-color: gold;
+  color: black;
+  font-weight: bold;
+}
+
+#ranking-table tbody tr:nth-child(2) td {
+  background-color: silver;
+  color: black;
+  font-weight: bold;
+}
+
+#ranking-table tbody tr:nth-child(3) td {
+  background-color: #cd7f32; /* Bronze */
+  color: black;
+  font-weight: bold;
+}
+
+/* Menos destaque para os dois últimos colocados */
+#ranking-table tbody tr:last-child td,
+#ranking-table tbody tr:nth-last-child(2) td {
+  background-color: #ffcccc;
+  color: red;
+  font-weight: bold;
+}
+
+#result strong{
+    background-color: #19d15f;
+    color: #000;
+}
+
+/* Estilo para campos com erro */
+input.erro, select.erro {
+    border: 2px solid red;
+    background-color: #ffe6e6;
 }
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {

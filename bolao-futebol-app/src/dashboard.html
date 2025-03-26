@@ -9,7 +9,6 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
     <title>Bolão Brasileirão 2025</title>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
@@ -22,6 +21,7 @@
       </button>
     </header>
     <main>
+      <!-- Seção de Pontos -->
       <section id="pontos">
         <h2>Seus Pontos</h2>
         <div id="pontos-totais-container">
@@ -33,13 +33,14 @@
           <ul id="pontos-rodada"></ul>
         </div>
       </section>
+
+      <!-- Seção de Bolão -->
       <section id="bolao">
         <h2>Escolha a Rodada e se divirta</h2>
         <label for="rodada-select">Selecione a Rodada:</label>
         <select id="rodada-select">
           <option value="1">Rodada 1</option>
           <option value="2">Rodada 2</option>
-
           <!-- Adicione mais opções conforme necessário -->
         </select>
         <div id="jogos-container"></div>
@@ -48,10 +49,23 @@
         </form>
         <h3 id="mensagem"></h3>
       </section>
+
+      <!-- Seção de Ranking -->
       <section id="ranking">
         <h2>Ranking do Bolão</h2>
         <button id="btn-ranking">Ver Ranking</button>
-        <ul id="ranking-list"></ul>
+        <table id="ranking-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Jogador</th>
+              <th>PTS</th>
+            </tr>
+          </thead>
+          <tbody id="ranking-list">
+            <!-- Os dados do ranking serão preenchidos dinamicamente -->
+          </tbody>
+        </table>
       </section>
     </main>
     <footer>

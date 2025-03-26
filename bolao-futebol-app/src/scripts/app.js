@@ -59,29 +59,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     let rodada = 1;
 
     const jogosRodada1 = [
-        { id: 1, mandante: 'CRU', visitante: 'MIR', escudoMandante: './assets/cruzeiro.png', escudoVisitante: './assets/mirassol.png' },
-        { id: 2, mandante: 'FOR', visitante: 'FLU', escudoMandante: './assets/fortaleza.png', escudoVisitante: './assets/fluminense.png' },
-        { id: 3, mandante: 'GRE', visitante: 'CAM', escudoMandante: './assets/gremio.png', escudoVisitante: './assets/atletico-mg.png'},
-        { id: 4, mandante: 'JUV', visitante: 'VIT', escudoMandante: './assets/juventude.png', escudoVisitante: './assets/vitoria.png'},
-        { id: 5, mandante: 'SÃO', visitante: 'SPO', escudoMandante: './assets/sao-paulo.png', escudoVisitante: './assets/sport.png'},
-        { id: 6, mandante: 'FLA', visitante: 'INT', escudoMandante: './assets/flamengo.png', escudoVisitante: './assets/internacional.png'},
-        { id: 7, mandante: 'PAL', visitante: 'BOT', escudoMandante: './assets/palmeiras.png', escudoVisitante: './assets/botafogo.png'},
-        { id: 8, mandante: 'VAS', visitante: 'SAN', escudoMandante: './assets/vasco.png', escudoVisitante: './assets/santos.png'},
-        { id: 9, mandante: 'BAH', visitante: 'COR', escudoMandante: './assets/bahia.png', escudoVisitante: './assets/corinthians.png'},
-        { id: 10, mandante: 'BRA', visitante: 'CEA', escudoMandante: './assets/rb-bragantino.png', escudoVisitante: './assets/ceara.png'}
-    ];
+    { id: 1, mandante: 'CRU', visitante: 'MIR', escudoMandante: './assets/cruzeiro.png', escudoVisitante: './assets/mirassol.png', data: '29/03/2025', horario: '18:30' },
+    { id: 2, mandante: 'FOR', visitante: 'FLU', escudoMandante: './assets/fortaleza.png', escudoVisitante: './assets/fluminense.png', data: '29/03/2025', horario: '18:30' },
+    { id: 3, mandante: 'GRE', visitante: 'CAM', escudoMandante: './assets/gremio.png', escudoVisitante: './assets/atletico-mg.png', data: '29/03/2025', horario: '18:30' },
+    { id: 4, mandante: 'JUV', visitante: 'VIT', escudoMandante: './assets/juventude.png', escudoVisitante: './assets/vitoria.png', data: '29/03/2025', horario: '18:30' },
+    { id: 5, mandante: 'SÃO', visitante: 'SPO', escudoMandante: './assets/sao-paulo.png', escudoVisitante: './assets/sport.png', data: '29/03/2025', horario: '18:30' },
+    { id: 6, mandante: 'FLA', visitante: 'INT', escudoMandante: './assets/flamengo.png', escudoVisitante: './assets/internacional.png', data: '29/03/2025', horario: '21:00' },
+    { id: 7, mandante: 'PAL', visitante: 'BOT', escudoMandante: './assets/palmeiras.png', escudoVisitante: './assets/botafogo.png', data: '30/03/2025', horario: '16:00' },
+    { id: 8, mandante: 'VAS', visitante: 'SAN', escudoMandante: './assets/vasco.png', escudoVisitante: './assets/santos.png', data: '30/03/2025', horario: '18:30' },
+    { id: 9, mandante: 'BAH', visitante: 'COR', escudoMandante: './assets/bahia.png', escudoVisitante: './assets/corinthians.png', data: '30/04/2025', horario: '20:00' },
+    { id: 10, mandante: 'BRA', visitante: 'CEA', escudoMandante: './assets/rb-bragantino.png', escudoVisitante: './assets/ceara.png', data: '31/04/2025', horario: '20:00' }
+];
 
     const jogosRodada2 = [
-        { id: 11, mandante: 'CAM', visitante: 'SÃO', escudoMandante: './assets/atletico-mg.png', escudoVisitante: './assets/sao-paulo.png' },
-        { id: 12, mandante: 'BOT', visitante: 'JUV', escudoMandante: './assets/botafogo.png', escudoVisitante: './assets/juventude.png' },
-        { id: 13, mandante: 'CEA', visitante: 'GRÊ', escudoMandante: './assets/ceara.png', escudoVisitante: './assets/gremio.png'},
-        { id: 14, mandante: 'COR', visitante: 'VAS', escudoMandante: './assets/corinthians.png', escudoVisitante: './assets/vasco.png'},
-        { id: 15, mandante: 'FLU', visitante: 'BRA', escudoMandante: './assets/fluminense.png', escudoVisitante: './assets/rb-bragantino.png'},
-        { id: 16, mandante: 'INT', visitante: 'CRU', escudoMandante: './assets/internacional.png', escudoVisitante: './assets/cruzeiro.png'},
-        { id: 17, mandante: 'MIR', visitante: 'FOR', escudoMandante: './assets/mirassol.png', escudoVisitante: './assets/fortaleza.png'},
-        { id: 18, mandante: 'SAN', visitante: 'BAH', escudoMandante: './assets/santos.png', escudoVisitante: './assets/bahia.png'},
-        { id: 19, mandante: 'SPO', visitante: 'PAL', escudoMandante: './assets/sport.png', escudoVisitante: './assets/palmeiras.png'},
-        { id: 20, mandante: 'VIT', visitante: 'FLA', escudoMandante: './assets/vitoria.png', escudoVisitante: './assets/flamengo.png'},
+        { id: 4, mandante: 'Palmeiras', visitante: 'São Paulo', escudoMandante: './assets/palmeiras.png', escudoVisitante: './assets/sao-paulo.png' },
+        { id: 5, mandante: 'Santos', visitante: 'Corinthians', escudoMandante: './assets/santos.png', escudoVisitante: './assets/corinthians.png' },
+        { id: 6, mandante: 'Internacional', visitante: 'Botafogo', escudoMandante: './assets/internacional.png', escudoVisitante: './assets/botafogo.png'},
     ];
 
     const jogosPorRodada = {
@@ -99,109 +92,152 @@ document.addEventListener('DOMContentLoaded', async () => {
     await carregarJogosEResultados(rodada);
 
     async function carregarJogosEResultados(rodada) {
-        jogosContainer.innerHTML = '';
-        const jogos = jogosPorRodada[rodada];
-        const resultados = await recuperarResultados(rodada);
-        const palpites = await recuperarPalpites(userId, rodada);
+    jogosContainer.innerHTML = '';
+    const jogos = jogosPorRodada[rodada];
+    const resultados = await recuperarResultados(rodada);
+    const palpites = await recuperarPalpites(userId, rodada);
 
-        jogos.forEach(jogo => {
-            const jogoDiv = document.createElement('div');
-            jogoDiv.classList.add('jogo');
+    jogos.forEach(jogo => {
+        const jogoDiv = document.createElement('div');
+        jogoDiv.classList.add('jogo');
 
-            const resultado = resultados.find(r => r.jogo_id === jogo.id);
-            const palpiteExistente = palpites.find(p => p.jogo === jogo.id);
+        const resultado = resultados.find(r => r.jogo_id === jogo.id);
+        const palpiteExistente = palpites.find(p => p.jogo === jogo.id);
 
-            let pontosJogo = 0;
-            if (resultado && palpiteExistente) {
-                pontosJogo = calcularPontos(
-                    { mandante: palpiteExistente.palpite_mandante, visitante: palpiteExistente.palpite_visitante },
-                    { mandante: resultado.mandante_gols, visitante: resultado.visitante_gols },
-                    palpiteExistente.primeiro_gol, resultado.primeiro_gol, palpiteExistente.jogo_dobro
-                );
+        let pontosJogo = 0;
+        if (resultado && palpiteExistente) {
+            pontosJogo = calcularPontos(
+                { mandante: palpiteExistente.palpite_mandante, visitante: palpiteExistente.palpite_visitante },
+                { mandante: resultado.mandante_gols, visitante: resultado.visitante_gols },
+                palpiteExistente.primeiro_gol, resultado.primeiro_gol, palpiteExistente.jogo_dobro
+            );
+        }
+
+        jogoDiv.innerHTML = `
+         <div>
+        <img src="${jogo.escudoMandante}" alt="${jogo.mandante}" class="escudo">
+        <span>${jogo.mandante}</span>
+        <span>vs</span>
+        <span>${jogo.visitante}</span>
+        <img src="${jogo.escudoVisitante}" alt="${jogo.visitante}" class="escudo">
+        <span class="pontos-jogo">${pontosJogo} pontos</span>
+    </div>
+    <div style="margin-top: 5px; font-size: 15px; color: rgb(41,212,129);">
+        <strong>Data:</strong> ${jogo.data} | <strong>Horário:</strong> ${jogo.horario}
+    </div>
+    ${palpiteExistente ? `
+        <div style="background-color:rgb(41, 212, 129); color:black; padding: 5px; font-size:15px; margin-top: 5px; border-radius: 5px;">
+            <strong>Seu Palpite:</strong> ${jogo.mandante} ${palpiteExistente.palpite_mandante} x ${palpiteExistente.palpite_visitante} ${jogo.visitante}
+        </div>
+    ` : `
+        <div>
+            <input type="number" name="palpite-mandante-${jogo.id}" placeholder="Gols Mandante" required>
+            <span>vs</span>
+            <input type="number" name="palpite-visitante-${jogo.id}" placeholder="Gols Visitante" required>
+            <label for="primeiro-gol-${jogo.id}">Primeiro Gol:</label>
+            <select name="primeiro-gol-${jogo.id}" required>
+                <option value="mandante">Mandante</option>
+                <option value="nenhum">Nenhum</option>
+                <option value="visitante">Visitante</option>
+            </select>
+            <label for="jogo-dobro-${jogo.id}">BÔNUS:</label>
+            <input type="checkbox" name="jogo-dobro-${jogo.id}" class="jogo-dobro-checkbox">
+        </div>
+    `}
+    ${resultado ? `
+        <div style="background-color:rgb(41, 212, 129); color:black; padding: 5px; font-size:15px; margin-top: 5px; border-radius: 5px;">
+            <strong>Resultado Final:</strong> ${jogo.mandante} ${resultado.mandante_gols} x ${resultado.visitante_gols} ${jogo.visitante}
+        </div>
+    ` : ''}
+`;
+        jogosContainer.appendChild(jogoDiv);
+    });
+
+    // Adicionar evento para permitir apenas um jogo com pontos em dobro
+    const checkboxesDobro = document.querySelectorAll('.jogo-dobro-checkbox');
+    checkboxesDobro.forEach(checkbox => {
+        checkbox.addEventListener('change', (event) => {
+            if (event.target.checked) {
+                checkboxesDobro.forEach(cb => {
+                    if (cb !== event.target) {
+                        cb.checked = false;
+                    }
+                });
             }
-
-            jogoDiv.innerHTML = `
-                <div>
-                    <img src="${jogo.escudoMandante}" alt="${jogo.mandante}" class="escudo">
-                    <span>${jogo.mandante}</span>
-                    <span>${palpiteExistente ? palpiteExistente.palpite_mandante : '-'}</span>
-                    <span>vs</span>
-                    <span>${palpiteExistente ? palpiteExistente.palpite_visitante : '-'}</span>
-                    <span>${jogo.visitante}</span>
-                    <img src="${jogo.escudoVisitante}" alt="${jogo.visitante}" class="escudo">
-                    <span>Primeiro Gol: ${palpiteExistente ? palpiteExistente.primeiro_gol : '-'}</span>
-                    ${palpiteExistente && palpiteExistente.jogo_dobro ? '<span class="bola-dobro">⚽</span>' : ''}
-                    <span class="pontos-jogo">${pontosJogo} pontos</span>
-                </div>
-                ${resultado ? `
-                    <div class="resultado-real">
-                        <strong>Resultado Real:</strong>
-                        <span>${jogo.mandante} ${resultado.mandante_gols} x ${resultado.visitante_gols} ${jogo.visitante}</span>
-                        <span>Primeiro Gol: ${resultado.primeiro_gol}</span>
-                    </div>
-                ` : ''}
-            `;
-            jogosContainer.appendChild(jogoDiv);
         });
-
-        // Adicionar evento para permitir apenas um jogo com pontos em dobro
-        const checkboxesDobro = document.querySelectorAll('.jogo-dobro-checkbox');
-        checkboxesDobro.forEach(checkbox => {
-            checkbox.addEventListener('change', (event) => {
-                if (event.target.checked) {
-                    checkboxesDobro.forEach(cb => {
-                        if (cb !== event.target) {
-                            cb.checked = false;
-                        }
-                    });
-                }
-            });
-        });
+    });
 
         form.addEventListener('submit', async (event) => {
-            event.preventDefault();
+    event.preventDefault();
 
-            const agora = new Date();
-            if (agora >= prazoFinal) {
-                mensagem.innerHTML = "<span style='color: red;'>⛔ Palpites encerrados! O prazo acabou.</span>";
-                return;
-            }
+    const agora = new Date();
+    if (agora >= prazoFinal) {
+        mensagem.innerHTML = "<span style='color: red;'>⛔ Palpites encerrados! O prazo acabou.</span>";
+        return;
+    }
 
-            // Desabilitar o botão de envio
-            btnEnviar.disabled = true;
+    // Desabilitar o botão de envio
+    btnEnviar.disabled = true;
 
-            const palpitesPromises = jogos.map(async (jogo) => {
-                const palpiteMandante = document.querySelector(`input[name="palpite-mandante-${jogo.id}"]`);
-                const palpiteVisitante = document.querySelector(`input[name="palpite-visitante-${jogo.id}"]`);
-                const primeiroGol = document.querySelector(`select[name="primeiro-gol-${jogo.id}"]`);
-                const jogoDobro = document.querySelector(`input[name="jogo-dobro-${jogo.id}"]`);
+    let erroEncontrado = false;
 
-                if (!palpiteMandante.value || !palpiteVisitante.value || !primeiroGol.value) {
-                    alert('Por favor, preencha todos os campos obrigatórios.');
-                    return;
-                }
+    const palpitesPromises = jogos.map(async (jogo) => {
+        const palpiteMandante = document.querySelector(`input[name="palpite-mandante-${jogo.id}"]`);
+        const palpiteVisitante = document.querySelector(`input[name="palpite-visitante-${jogo.id}"]`);
+        const primeiroGol = document.querySelector(`select[name="primeiro-gol-${jogo.id}"]`);
+        const jogoDobro = document.querySelector(`input[name="jogo-dobro-${jogo.id}"]`);
 
-                // Verificar se já existe um jogo marcado como "jogo em dobro"
-                const jogoDobroExistente = palpites.find(p => p.jogo_dobro);
-                if (jogoDobro.checked && jogoDobroExistente) {
-                    alert('Você só pode marcar um jogo como "jogo em dobro" por rodada.');
-                    return;
-                }
+        // Limpar mensagens de erro anteriores
+        palpiteMandante.classList.remove('erro');
+        palpiteVisitante.classList.remove('erro');
+        primeiroGol.classList.remove('erro');
 
-                const palpiteExistente = palpites.find(p => p.jogo === jogo.id);
-                if (!palpiteExistente) {
-                    await salvarPalpite(userId, rodada, jogo.id, { mandante: +palpiteMandante.value, visitante: +palpiteVisitante.value }, primeiroGol.value, jogoDobro.checked);
-                }
-            });
+        // Verificar se os campos estão preenchidos
+        if (!palpiteMandante.value) {
+            palpiteMandante.classList.add('erro');
+            erroEncontrado = true;
+        }
+        if (!palpiteVisitante.value) {
+            palpiteVisitante.classList.add('erro');
+            erroEncontrado = true;
+        }
+        if (!primeiroGol.value) {
+            primeiroGol.classList.add('erro');
+            erroEncontrado = true;
+        }
 
-            await Promise.all(palpitesPromises);
-            mensagem.innerHTML = "<span style='color: green;'>✅ Palpite enviado com sucesso!</span>";
-            const novosPalpites = await recuperarPalpites(userId, rodada);
-            atualizarListaPalpites(novosPalpites, betsList);
-            await calcularESalvarPontos(userId, rodada, novosPalpites, resultados, pontosTotaisContainer, pontosRodadaContainer);
-            await atualizarRanking(userId); // Atualizar o ranking após salvar os pontos
-            window.location.reload(); // Recarregar a página para atualizar os palpites e bloquear os campos
-        });
+        if (erroEncontrado) {
+            return;
+        }
+
+        // Verificar se já existe um jogo marcado como "jogo em dobro"
+        const jogoDobroExistente = palpites.find(p => p.jogo_dobro);
+        if (jogoDobro.checked && jogoDobroExistente) {
+            alert('Você só pode marcar um jogo como "jogo em dobro" por rodada.');
+            return;
+        }
+
+        const palpiteExistente = palpites.find(p => p.jogo === jogo.id);
+        if (!palpiteExistente) {
+            await salvarPalpite(userId, rodada, jogo.id, { mandante: +palpiteMandante.value, visitante: +palpiteVisitante.value }, primeiroGol.value, jogoDobro.checked);
+        }
+    });
+
+    await Promise.all(palpitesPromises);
+
+    if (erroEncontrado) {
+        mensagem.innerHTML = "<span style='color: red;'>⛔ Corrija os campos destacados antes de enviar.</span>";
+        btnEnviar.disabled = false; // Reativar o botão se houver erros
+        return;
+    }
+
+    mensagem.innerHTML = "<span style='color: green;'>✅ Palpite enviado com sucesso!</span>";
+    const novosPalpites = await recuperarPalpites(userId, rodada);
+    atualizarListaPalpites(novosPalpites, betsList);
+    await calcularESalvarPontos(userId, rodada, novosPalpites, resultados, pontosTotaisContainer, pontosRodadaContainer);
+    await atualizarRanking(userId); // Atualizar o ranking após salvar os pontos
+    window.location.reload(); // Recarregar a página para atualizar os palpites e bloquear os campos
+});
 
         await calcularESalvarPontos(userId, rodada, palpites, resultados, pontosTotaisContainer, pontosRodadaContainer);
         await atualizarRanking(userId); // Atualizar o ranking após calcular e salvar os pontos
@@ -258,22 +294,27 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     btnRanking.addEventListener('click', async () => {
-        const { data: ranking, error } = await supabase
-            .from('ranking')
-            .select('username, SUM(pontos) as total_pontos')
-            .group('username')
-            .order('total_pontos', { ascending: false });
+    const { data: ranking, error } = await supabase
+        .from('ranking')
+        .select('username, total_pontos')
+        .order('total_pontos', { ascending: false });
 
-        if (error) {
-            console.error('Erro ao buscar o ranking:', error);
-            return;
-        }
+    if (error) {
+        console.error('Erro ao buscar o ranking:', error);
+        return;
+    }
 
-        rankingList.innerHTML = '';
-        ranking.forEach((user, index) => {
-            const li = document.createElement('li');
-            li.textContent = `${index + 1}. ${user.username}: ${user.total_pontos} pontos`;
-            rankingList.appendChild(li);
-        });
+    const rankingList = document.getElementById('ranking-list');
+    rankingList.innerHTML = '';
+
+    ranking.forEach((user, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${user.username}</td>
+            <td>${user.total_pontos}</td>
+        `;
+        rankingList.appendChild(row);
     });
+});
 });
