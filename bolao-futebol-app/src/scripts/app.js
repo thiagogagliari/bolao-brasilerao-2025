@@ -120,43 +120,26 @@ document.addEventListener('DOMContentLoaded', async () => {
                 );
             }
 
-            jogoDiv.innerHTML = resultado ? `
-                <img src="${jogo.escudoMandante}" alt="${jogo.mandante}" class="escudo">
-                <span>${jogo.mandante}</span>
-                <span>${resultado.mandante_gols}</span>
-                <span>vs</span>
-                <span>${resultado.visitante_gols}</span>
-                <span>${jogo.visitante}</span>
-                <img src="${jogo.escudoVisitante}" alt="${jogo.visitante}" class="escudo">
-                <span>Primeiro Gol: ${resultado.primeiro_gol}</span>
-                <span class="pontos-jogo">${pontosJogo} pontos</span>
-            ` : palpiteExistente ? `
-                <img src="${jogo.escudoMandante}" alt="${jogo.mandante}" class="escudo">
-                <span>${jogo.mandante}</span>
-                <span>${palpiteExistente.palpite_mandante}</span>
-                <span>vs</span>
-                <span>${palpiteExistente.palpite_visitante}</span>
-                <span>${jogo.visitante}</span>
-                <img src="${jogo.escudoVisitante}" alt="${jogo.visitante}" class="escudo">
-                <span>Primeiro Gol: ${palpiteExistente.primeiro_gol}</span>
-                ${palpiteExistente.jogo_dobro ? '<span class="bola-dobro">⚽</span>' : ''}
-                <span class="pontos-jogo">${pontosJogo} pontos</span>
-            ` : `
-                <img src="${jogo.escudoMandante}" alt="${jogo.mandante}" class="escudo">
-                <span>${jogo.mandante}</span>
-                <input type="number" name="palpite-mandante-${jogo.id}" placeholder="" required>
-                <span>vs</span>
-                <input type="number" name="palpite-visitante-${jogo.id}" placeholder="" required>
-                <span>${jogo.visitante}</span>
-                <img src="${jogo.escudoVisitante}" alt="${jogo.visitante}" class="escudo">
-                <label for="primeiro-gol-${jogo.id}">Primeiro Gol:</label>
-                <select name="primeiro-gol-${jogo.id}" required>
-                    <option value="mandante">Mandante</option>
-                    <option value="nenhum">Nenhum</option>
-                    <option value="visitante">Visitante</option>
-                </select>
-                <label for="jogo-dobro-${jogo.id}">BÔNUS:</label>
-                <input type="checkbox" name="jogo-dobro-${jogo.id}" class="jogo-dobro-checkbox">
+            jogoDiv.innerHTML = `
+                <div>
+                    <img src="${jogo.escudoMandante}" alt="${jogo.mandante}" class="escudo">
+                    <span>${jogo.mandante}</span>
+                    <span>${palpiteExistente ? palpiteExistente.palpite_mandante : '-'}</span>
+                    <span>vs</span>
+                    <span>${palpiteExistente ? palpiteExistente.palpite_visitante : '-'}</span>
+                    <span>${jogo.visitante}</span>
+                    <img src="${jogo.escudoVisitante}" alt="${jogo.visitante}" class="escudo">
+                    <span>Primeiro Gol: ${palpiteExistente ? palpiteExistente.primeiro_gol : '-'}</span>
+                    ${palpiteExistente && palpiteExistente.jogo_dobro ? '<span class="bola-dobro">⚽</span>' : ''}
+                    <span class="pontos-jogo">${pontosJogo} pontos</span>
+                </div>
+                ${resultado ? `
+                    <div class="resultado-real">
+                        <strong>Resultado Real:</strong>
+                        <span>${jogo.mandante} ${resultado.mandante_gols} x ${resultado.visitante_gols} ${jogo.visitante}</span>
+                        <span>Primeiro Gol: ${resultado.primeiro_gol}</span>
+                    </div>
+                ` : ''}
             `;
             jogosContainer.appendChild(jogoDiv);
         });

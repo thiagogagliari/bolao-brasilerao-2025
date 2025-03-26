@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (profileError) {
                     alert('Erro ao criar perfil de usuário: ' + profileError.message)
                 } else {
-                    alert('Cadastro realizado com sucesso!')
+                    alert('Cadastro realizado com sucesso! Clique no link de confirmação enviado por e-mail')
                     window.location.href = 'login.html'
                 }
             }
