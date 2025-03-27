@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #1b13bb;
+    background: linear-gradient(#333333, #dd1818);
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -15,6 +15,7 @@ header {
 
 header h1 {
     margin: 0;
+    font-size: 30px;
 }
 
 main {
@@ -28,6 +29,7 @@ main {
 section {
     margin-bottom: 20px;
 }
+
 
 h2 {
     border-bottom: 2px solid #333;
@@ -64,7 +66,7 @@ input{
 
 form button {
     height: 50px;
-    font-size: 50px;
+    font-size: 20px;
     background-color: #0fbc54;
     color: #1e18bc;
     border: none;
@@ -125,7 +127,7 @@ select, label{
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #1b13bb;
+    background-color: #df1313;
     color: #fff;
     position: fixed;
     width: 100%;
@@ -214,7 +216,8 @@ ul li {
 }
 
 #user-info {
-  display: inline;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -223,6 +226,7 @@ ul li {
 }
 
 #logout-button {
+  margin: 20px;
   position: relative;
   background-color: red;
   color: white;
@@ -413,7 +417,7 @@ input.erro, select.erro {
     }
 }
 
-@media (min-width: 200px) {
+@media (max-width: 200px) {
     .jogo {
         display: flex;
         flex-wrap: wrap;
@@ -435,7 +439,7 @@ input.erro, select.erro {
         height: 30px;
     }
     header h1 {
-        font-size: 24px;
+        font-size: 30px;
     }
 
     h2, h3 {
