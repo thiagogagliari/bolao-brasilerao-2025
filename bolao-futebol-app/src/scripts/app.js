@@ -71,15 +71,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     { id: 10, mandante: 'BRA', visitante: 'CEA', escudoMandante: './assets/rb-bragantino.png', escudoVisitante: './assets/ceara.png', data: '31/04/2025', horario: '20:00' }
 ];
 
-    const jogosRodada2 = [
-        { id: 4, mandante: 'Palmeiras', visitante: 'São Paulo', escudoMandante: './assets/palmeiras.png', escudoVisitante: './assets/sao-paulo.png' },
-        { id: 5, mandante: 'Santos', visitante: 'Corinthians', escudoMandante: './assets/santos.png', escudoVisitante: './assets/corinthians.png' },
-        { id: 6, mandante: 'Internacional', visitante: 'Botafogo', escudoMandante: './assets/internacional.png', escudoVisitante: './assets/botafogo.png'},
-    ];
+    // const jogosRodada2 = [
+    //     { id: 4, mandante: 'Palmeiras', visitante: 'São Paulo', escudoMandante: './assets/palmeiras.png', escudoVisitante: './assets/sao-paulo.png' },
+    //     { id: 5, mandante: 'Santos', visitante: 'Corinthians', escudoMandante: './assets/santos.png', escudoVisitante: './assets/corinthians.png' },
+    //     { id: 6, mandante: 'Internacional', visitante: 'Botafogo', escudoMandante: './assets/internacional.png', escudoVisitante: './assets/botafogo.png'},
+    // ];
 
     const jogosPorRodada = {
         1: jogosRodada1,
-        2: jogosRodada2,
         // Adicione mais rodadas conforme necessário
     };
 
