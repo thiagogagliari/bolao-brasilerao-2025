@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background: linear-gradient(#333333, #dd1818);
+    background: linear-gradient(135deg, #0575e6, #021b79);
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -127,7 +127,7 @@ select, label{
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #df1313;
+    background: linear-gradient(135deg, #0575e6, #021b79);
     color: #fff;
     position: fixed;
     width: 100%;
