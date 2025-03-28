@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     let rodada = 1;
 
     const jogosRodada1 = [
-    { id: 1, mandante: 'CRU', visitante: 'MIR', escudoMandante: './assets/cruzeiro.png', escudoVisitante: './assets/mirassol.png', data: '29/03/2025', horario: '18:30' },
-    { id: 2, mandante: 'FOR', visitante: 'FLU', escudoMandante: './assets/fortaleza.png', escudoVisitante: './assets/fluminense.png', data: '29/03/2025', horario: '18:30' },
+    { id: 1, mandante: 'CRU', visitante: 'MIR', escudoMandante: './assets/cruzeiro.png', escudoVisitante: './assets/mirassol.svg', data: '29/03/2025', horario: '18:30' },
+    { id: 2, mandante: 'FOR', visitante: 'FLU', escudoMandante: './assets/fortaleza.svg', escudoVisitante: './assets/fluminense.png', data: '29/03/2025', horario: '18:30' },
     { id: 3, mandante: 'GRE', visitante: 'CAM', escudoMandante: './assets/gremio.png', escudoVisitante: './assets/atletico-mg.png', data: '29/03/2025', horario: '18:30' },
-    { id: 4, mandante: 'JUV', visitante: 'VIT', escudoMandante: './assets/juventude.png', escudoVisitante: './assets/vitoria.png', data: '29/03/2025', horario: '18:30' },
-    { id: 5, mandante: 'SÃO', visitante: 'SPO', escudoMandante: './assets/sao-paulo.png', escudoVisitante: './assets/sport.png', data: '29/03/2025', horario: '18:30' },
+    { id: 4, mandante: 'JUV', visitante: 'VIT', escudoMandante: './assets/juventude.svg', escudoVisitante: './assets/vitoria.png', data: '29/03/2025', horario: '18:30' },
+    { id: 5, mandante: 'SÃO', visitante: 'SPO', escudoMandante: './assets/sao-paulo.png', escudoVisitante: './assets/sport.svg', data: '29/03/2025', horario: '18:30' },
     { id: 6, mandante: 'FLA', visitante: 'INT', escudoMandante: './assets/flamengo.png', escudoVisitante: './assets/internacional.png', data: '29/03/2025', horario: '21:00' },
     { id: 7, mandante: 'PAL', visitante: 'BOT', escudoMandante: './assets/palmeiras.png', escudoVisitante: './assets/botafogo.png', data: '30/03/2025', horario: '16:00' },
     { id: 8, mandante: 'VAS', visitante: 'SAN', escudoMandante: './assets/vasco.png', escudoVisitante: './assets/santos.png', data: '30/03/2025', horario: '18:30' },
