@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
     `}
     ${resultado ? `
-        <div style="background-color:rgb(41, 212, 129); color:black; padding: 5px; font-size:15px; margin-top: 5px; border-radius: 5px;">
+        <div style="background-color: #ffcd00; color:black; padding: 5px; font-size:15px; margin-top: 5px; border-radius: 5px;">
             <strong>Resultado Final:</strong> ${jogo.mandante} ${resultado.mandante_gols} x ${resultado.visitante_gols} ${jogo.visitante}
         </div>
     ` : ''}
