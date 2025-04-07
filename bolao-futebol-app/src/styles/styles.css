@@ -141,7 +141,7 @@ ul {
 
 ul li {
     background-color:#2216aa;
-    color:#0fca2b;
+    color:#dfd929;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -152,6 +152,12 @@ ul li {
     background-color: #2216aa;
     color: #fff;
 }
+#pontos-totais-container h3{
+    text-align: center;
+    font-size: 20px;
+    margin: 0 auto;
+    padding: 0;
+}
 
 #pontos-totais-container ul, #pontos-rodada-container ul {
     padding: 0;
@@ -160,12 +166,40 @@ ul li {
     color: #fff;
 }
 
-#pontos-totais-container li, #pontos-rodada-container li {
+#pontos-rodada-container h3{
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+#pontos-rodada-container li{
+    margin: 0;
+    border: none;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pontos-rodada{
+    margin: 0;
+    padding: 0;
+}
+/* #pontos-totais-container li, #pontos-rodada-container li {
     background-color: #014dff;
     color: #19d15f;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ddd;
+} */
+
+#pontos-totais li{
+    font-size: 1.75rem;
+    background-color: #0fca2b;
+    color: #000;
+    font-weight: 900;
+    text-align: center;
 }
 
 #btn-ranking {
