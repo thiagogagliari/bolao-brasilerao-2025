@@ -82,7 +82,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       .select(
         "rodada, jogo, palpite_mandante, palpite_visitante, primeiro_gol, jogo_dobro"
       )
-      .eq("user_id", userId);
+      .eq("user_id", userId)
+      .order("jogo", { ascending: false });
 
     if (palpitesError) {
       console.error("Erro ao buscar os palpites:", palpitesError);
@@ -98,12 +99,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.error("Erro ao buscar os resultados:", resultadosError);
       return;
     }
-
-    // palpites.sort((a, b) => {
-    //   const numA = parseInt(a.r.split(" ")[1]);
-    //   const numB = parseInt(b.r.split(" ")[1]);
-    //   return numA - numB;
-    // });
 
     palpitesList.innerHTML = "";
     palpites.forEach((palpite) => {
