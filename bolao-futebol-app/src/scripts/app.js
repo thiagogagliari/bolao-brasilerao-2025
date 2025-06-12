@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const mensagem = document.getElementById("mensagem");
   const btnEnviar = document.getElementById("btn-enviar"); // Certifique-se de que o ID está correto
 
-  const prazoFinal = new Date(2025, 5, 12, 19, 0); // 12 de junho de 2025 às 19:00 (mês começa em 0)
+  const prazoFinal = new Date(2025, 5, 12, 20, 0); // 12 de junho de 2025 às 19:00 (mês começa em 0)
 
   const {
     data: { session },
