@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const mensagem = document.getElementById("mensagem");
   const btnEnviar = document.getElementById("btn-enviar"); // Certifique-se de que o ID está correto
 
-  const prazoFinal = new Date(2025, 5, 12, 20, 0); // 12 de junho de 2025 às 19:00 (mês começa em 0)
+  const prazoFinal = new Date(2025, 6, 12, 16, 30); // 12 de julho de 2025 às 16:30 (mês começa em 0)
 
   const {
     data: { session },
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   const userId = user.id;
-  let rodada = 12;
+  let rodada = 13;
 
   const jogosRodada1 = [
     {
@@ -1188,6 +1188,99 @@ document.addEventListener("DOMContentLoaded", async () => {
     },
   ];
 
+  const jogosRodada13 = [
+    {
+      id: 121,
+      mandante: "FLA",
+      visitante: "SÃO",
+      escudoMandante: "./assets/flamengo.png",
+      escudoVisitante: "./assets/sao-paulo.png",
+      data: "12/07/2025",
+      horario: "16:30",
+    },
+    {
+      id: 122,
+      mandante: "INT",
+      visitante: "VIT",
+      escudoMandante: "./assets/internacional.png",
+      escudoVisitante: "./assets/vitoria.png",
+      data: "12/07/2025",
+      horario: "16:30",
+    },
+    {
+      id: 123,
+      mandante: "VAS",
+      visitante: "BOT",
+      escudoMandante: "./assets/vasco.png",
+      escudoVisitante: "./assets/botafogo.png",
+      data: "12/07/2025",
+      horario: "18:30",
+    },
+    {
+      id: 124,
+      mandante: "BAH",
+      visitante: "CAM",
+      escudoMandante: "./assets/bahia.png",
+      escudoVisitante: "./assets/atletico-mg.png",
+      data: "12/07/2025",
+      horario: "21:00",
+    },
+    {
+      id: 125,
+      mandante: "MIR",
+      visitante: "FLU",
+      escudoMandante: "./assets/mirassol.svg",
+      escudoVisitante: "./assets/fluminense.png",
+      data: "ADIADO",
+      horario: "ADIADO",
+    },
+    {
+      id: 126,
+      mandante: "SAN",
+      visitante: "PAL",
+      escudoMandante: "./assets/santos.png",
+      escudoVisitante: "./assets/palmeiras.png",
+      data: "13/07/2025",
+      horario: "15:00",
+    },
+    {
+      id: 127,
+      mandante: "COR",
+      visitante: "BRA",
+      escudoMandante: "./assets/corinthians.png",
+      escudoVisitante: "./assets/rb-bragantino.png",
+      data: "13/07/2025",
+      horario: "19:00",
+    },
+    {
+      id: 128,
+      mandante: "CRU",
+      visitante: "GRÊ",
+      escudoMandante: "./assets/cruzeiro.png",
+      escudoVisitante: "./assets/gremio.png",
+      data: "13/07/2025",
+      horario: "20:30",
+    },
+    {
+      id: 129,
+      mandante: "FOR",
+      visitante: "CEA",
+      escudoMandante: "./assets/fortaleza.svg",
+      escudoVisitante: "./assets/ceara.png",
+      data: "13/07/2025",
+      horario: "20:30",
+    },
+    {
+      id: 130,
+      mandante: "JUV",
+      visitante: "SPO",
+      escudoMandante: "./assets/juventude.svg",
+      escudoVisitante: "./assets/sport.svg",
+      data: "14/07/2025",
+      horario: "20:00",
+    },
+  ];
+
   const jogosPorRodada = {
     1: jogosRodada1,
     2: jogosRodada2,
@@ -1201,6 +1294,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     10: jogosRodada10,
     11: jogosRodada11,
     12: jogosRodada12,
+    13: jogosRodada13,
   };
 
   const rodadaSelect = document.getElementById("rodada-select");
