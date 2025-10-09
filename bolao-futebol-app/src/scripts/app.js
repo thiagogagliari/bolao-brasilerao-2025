@@ -1231,8 +1231,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       visitante: "FLU",
       escudoMandante: "./assets/mirassol.svg",
       escudoVisitante: "./assets/fluminense.png",
-      data: "ADIADO",
-      horario: "ADIADO",
+      data: "08/10/2025",
+      horario: "21:00",
     },
     {
       id: 126,
@@ -1288,8 +1288,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       visitante: "SPO",
       escudoMandante: "./assets/atletico-mg.png",
       escudoVisitante: "./assets/sport.svg",
-      data: "ADIADO",
-      horario: "ADIADO",
+      data: "08/10/2025",
+      horario: "19:00",
     },
     {
       id: 132,
