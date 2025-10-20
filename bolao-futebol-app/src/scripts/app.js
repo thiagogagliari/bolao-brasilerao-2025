@@ -2701,8 +2701,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       visitante: "FLU",
       escudoMandante: "./assets/vasco.png",
       escudoVisitante: "./assets/fluminense.png",
-      data: "19/10/2025",
-      horario: "14:00",
+      data: "20/10/2025 JOGO SERIA DIA 19 MAS FOI ADIADO PARA 20/10/2025",
+      horario: "19:30",
     },
     {
       id: 284,
