@@ -1297,8 +1297,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       visitante: "INT",
       escudoMandante: "./assets/bahia.png",
       escudoVisitante: "./assets/internacional.png",
-      data: "ADIADO",
-      horario: "ADIADO",
+      data: "22/10/2025",
+      horario: "19:00",
     },
     {
       id: 133,
