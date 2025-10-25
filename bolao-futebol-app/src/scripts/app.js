@@ -2846,7 +2846,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       id: 299,
       mandante: "BRA",
       visitante: "VAS",
-      escudoMandante: "./assets/bragantino.png",
+      escudoMandante: "./assets/rb-bragantino.png",
       escudoVisitante: "./assets/vasco.png",
       data: "26/10/2025",
       horario: "18:30",
