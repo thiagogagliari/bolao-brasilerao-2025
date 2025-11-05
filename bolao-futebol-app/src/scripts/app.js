@@ -3040,9 +3040,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     {
       id: 320,
       mandante: "PAL",
-      visitante: "VAS",
+      visitante: "SAN",
       escudoMandante: "./assets/palmeiras.png",
-      escudoVisitante: "./assets/vasco.png",
+      escudoVisitante: "./assets/santos.png",
       data: "06/11/2025",
       horario: "21:30",
     },
