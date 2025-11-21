@@ -3284,7 +3284,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       id: 346,
       mandante: "SPO",
       visitante: "VIT",
-      escudoMandante: "./assets/santos.png",
+      escudoMandante: "./assets/sport.svg",
       escudoVisitante: "./assets/vitoria.png",
       data: "23/11/2025",
       horario: "18:30",
