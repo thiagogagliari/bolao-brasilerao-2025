@@ -3555,7 +3555,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       mandante: "INT",
       visitante: "BRA",
       escudoMandante: "./assets/internacional.png",
-      escudoVisitante: "./assets/RB-bragantino.png",
+      escudoVisitante: "./assets/rb-bragantino.png",
       data: "07/12/2025",
       horario: "16:00",
     },
